@@ -1,0 +1,4 @@
+src/main/resources/config.properties
+src/main/resources/serviceAccountKey.json
+target/classes/serviceAccountKey.json
+target/classes/config.properties
