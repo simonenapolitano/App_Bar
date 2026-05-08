@@ -87,7 +87,7 @@ public class LoginController {
             return;
         }
 
-        String apiKey = getApiKey(); // Find this in Firebase Settings -> General
+        String apiKey = getApiKey();
         String url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + apiKey;
 
         // Prepare the JSON body
@@ -99,7 +99,6 @@ public class LoginController {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).header("Content-Type", "application/json").POST(HttpRequest.BodyPublishers.ofString(jsonPayload)).build();
 
-        // Send the request asynchronously so the UI doesn't freeze
         client.sendAsync(request, HttpResponse.BodyHandlers.ofString()).thenAccept(response -> {
             int statusCode = response.statusCode();
             String body = response.body();
