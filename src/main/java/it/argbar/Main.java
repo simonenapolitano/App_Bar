@@ -8,11 +8,17 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.scene.paint.Color;
 
 public class Main extends Application {
     @Override
@@ -23,7 +29,7 @@ public class Main extends Application {
                 System.err.println("CRITICAL: serviceAccountKey.json not found!");
                 return;
             }
-            FirebaseOptions options = FirebaseOptions.builder().setCredentials(GoogleCredentials.fromStream(serviceAccount)).build();
+            FirebaseOptions options = FirebaseOptions.builder().setCredentials(GoogleCredentials.fromStream(serviceAccount)).setDatabaseUrl("https://argbar-dcf66-default-rtdb.firebaseio.com/").build();
             if (FirebaseApp.getApps().isEmpty()) {
                 FirebaseApp.initializeApp(options);
                 System.out.println("Firebase initialized successfully.");

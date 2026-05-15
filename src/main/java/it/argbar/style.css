@@ -1,0 +1,40 @@
+.button-login {
+    -fx-background-color: #262626;
+    -fx-background-radius: 50;
+    -fx-text-fill: white;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;       /* Ridotto da 14px */
+    -fx-padding: 5 20 5 20;    /* Ridotto (Sopra/Sotto: 5, Destra/Sinistra: 20) */
+    -fx-cursor: hand;
+}
+
+.button-login:hover {
+    -fx-background-color: #3d3d3d;
+}
+
+.button-signin {
+    -fx-background-color: #E6E6E6;
+    -fx-background-radius: 50;
+    -fx-text-fill: #262626;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 12px;       /* Ridotto da 14px */
+    -fx-padding: 5 20 5 20;    /* Ridotto */
+    -fx-cursor: hand;
+}
+
+.button-signin:hover {
+    -fx-background-color: #dcdcdc;
+}
+
+.textFieldLogin {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #A6A6A6 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-radius: 0;
+}
+
+.textFieldLogin:focused {
+    -fx-border-color: transparent transparent #405aa8 transparent; /* Blu Material */
+    -fx-border-width: 0 0 2 0; /* Linea più spessa */
+}
